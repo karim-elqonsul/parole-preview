@@ -10,6 +10,6 @@
 </head>
 <body>
 <p>جارٍ فتح متجر بارولي… (أول تحميل يستغرق نحو ٣٠ ثانية)<br><a href="https://playground.wordpress.net/?mode=seamless&blueprint-url=https://raw.githubusercontent.com/karim-elqonsul/parole-preview/d8eb5296292c5de888235841f391893deecf6912/blueprint.json">اضغط هنا إن لم يفتح تلقائيًا</a></p>
-<script>location.replace(document.querySelector('meta[http-equiv=refresh]').content.split('url=')[1]);</script>
+<script>var c=document.querySelector('meta[http-equiv=refresh]').content;location.replace(c.slice(c.indexOf('url=')+4));</script>
 </body>
 </html>
