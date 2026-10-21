@@ -1,0 +1,79 @@
+{
+ "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+ "landingPage": "/",
+ "preferredVersions": {
+  "php": "8.3",
+  "wp": "latest"
+ },
+ "features": {
+  "networking": true
+ },
+ "steps": [
+  {
+   "step": "setSiteLanguage",
+   "language": "ar"
+  },
+  {
+   "step": "mkdir",
+   "path": "/wordpress/wp-content/languages/plugins"
+  },
+  {
+   "step": "unzip",
+   "zipFile": {
+    "resource": "url",
+    "url": "https://raw.githubusercontent.com/karim-elqonsul/parole-preview/main/woocommerce-ar.zip"
+   },
+   "extractToPath": "/wordpress/wp-content/languages/plugins"
+  },
+  {
+   "step": "installPlugin",
+   "pluginData": {
+    "resource": "wordpress.org/plugins",
+    "slug": "woocommerce"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "setSiteOptions",
+   "options": {
+    "blogname": "بارولي",
+    "permalink_structure": "/%postname%/",
+    "woocommerce_currency": "SAR",
+    "woocommerce_default_country": "SA:SA-01",
+    "woocommerce_onboarding_profile": {
+     "skipped": true
+    },
+    "woocommerce_coming_soon": "no",
+    "woocommerce_store_pages_only": "no",
+    "woocommerce_enable_ajax_add_to_cart": "yes",
+    "woocommerce_calc_taxes": "no"
+   }
+  },
+  {
+   "step": "installTheme",
+   "themeData": {
+    "resource": "url",
+    "url": "https://raw.githubusercontent.com/karim-elqonsul/parole-preview/main/parole-theme.zip"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "installPlugin",
+   "pluginData": {
+    "resource": "url",
+    "url": "https://raw.githubusercontent.com/karim-elqonsul/parole-preview/main/parole-sample-data.zip"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "runPHP",
+   "code": "<?php require '/wordpress/wp-load.php'; wp_set_current_user(1); parole_seed_branches(); parole_create_pages(); parole_sd_import(); $c = wc_get_page_id('checkout'); wp_update_post(['ID'=>$c,'post_content'=>'<!-- wp:shortcode -->[woocommerce_checkout]<!-- /wp:shortcode -->']); $k = wc_get_page_id('cart'); wp_update_post(['ID'=>$k,'post_content'=>'<!-- wp:shortcode -->[woocommerce_cart]<!-- /wp:shortcode -->']); flush_rewrite_rules(); wp_set_current_user(0);"
+  }
+ ]
+}
