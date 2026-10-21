@@ -10,6 +10,15 @@
  },
  "steps": [
   {
+   "step": "mkdir",
+   "path": "/wordpress/wp-content/mu-plugins"
+  },
+  {
+   "step": "writeFile",
+   "path": "/wordpress/wp-content/mu-plugins/parole-preview.php",
+   "data": "<?php\n// Public preview: show the storefront as a visitor sees it.\nadd_filter( 'show_admin_bar', '__return_false' );\n"
+  },
+  {
    "step": "setSiteLanguage",
    "language": "ar"
   },
