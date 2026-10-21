@@ -75,5 +75,11 @@
    "step": "runPHP",
    "code": "<?php require '/wordpress/wp-load.php'; wp_set_current_user(1); parole_seed_branches(); parole_create_pages(); parole_sd_import(); $c = wc_get_page_id('checkout'); wp_update_post(['ID'=>$c,'post_content'=>'<!-- wp:shortcode -->[woocommerce_checkout]<!-- /wp:shortcode -->']); $k = wc_get_page_id('cart'); wp_update_post(['ID'=>$k,'post_content'=>'<!-- wp:shortcode -->[woocommerce_cart]<!-- /wp:shortcode -->']); flush_rewrite_rules(); wp_set_current_user(0);"
   }
- ]
+ ],
+ "login": false,
+ "meta": {
+  "title": "PARŌLE store preview",
+  "description": "Arabic-first WooCommerce theme with test products",
+  "author": "karim-elqonsul"
+ }
 }
