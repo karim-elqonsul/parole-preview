@@ -1,7 +1,19 @@
-# PARŌLE — live preview
+<div align="center">
 
-Open: **https://karim-elqonsul.github.io/parole-preview/**
+# بارولي PARŌLE — متجر القهوة
 
-Runs WordPress + WooCommerce + the PARŌLE theme with **test products** in your browser (first load ≈ 30–60 s). Each visitor gets a private, temporary copy; nothing is saved. Payments are disabled (test "cash on delivery" only).
+### [🌐 افتح الموقع ← karim-elqonsul.github.io/parole-preview](https://karim-elqonsul.github.io/parole-preview/)
 
-This repository only hosts the preview files. The theme source is kept in a private repository.
+يفتح على الموبايل والكمبيوتر · أول تحميل ≈ ٣٠ ثانية · افتحه في Chrome أو Safari
+
+<img src="screenshots/desktop.jpg" alt="بارولي — الواجهة على الكمبيوتر" width="720">
+<br><br>
+<img src="screenshots/mobile.jpg" alt="بارولي — الواجهة على الموبايل" width="300">
+
+</div>
+
+---
+
+**ملاحظة:** هذه نسخة معاينة. المنتجات والأسعار تجريبية، والدفع غير مفعّل (اختبار «الدفع عند الاستلام» فقط). كل زائر يرى نسخة خاصة ومؤقتة لا تُحفظ.
+
+*Preview of the PARŌLE WooCommerce theme running on WordPress Playground. The theme source is kept in a private repository.*
